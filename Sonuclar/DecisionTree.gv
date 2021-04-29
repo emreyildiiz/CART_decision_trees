@@ -1,0 +1,159 @@
+// DecisionTree
+digraph {
+	koksola [label="Özellik : Age 
+' <=34 mi ?'"]
+	kok -> koksola [label=True fontcolor=forestgreen]
+	koksolasola [label="Özellik : Employment 
+'1<=x<4 mi ?'"]
+	koksola -> koksolasola [label=True fontcolor=forestgreen]
+	koksolasolayaprak [label="good
+{'bad': 8, 'good': 32}" color=lightblue shape=rect style=filled]
+	koksolasola -> koksolasolayaprak [label=True fontcolor=forestgreen]
+	koksolasolasaga [label="Özellik : Employment 
+'4<=x<7 mi ?'"]
+	koksolasola -> koksolasolasaga [label=False fontcolor=red]
+	koksolasolasagayaprak [label="good
+{'good': 12, 'bad': 3}" color=lightblue shape=rect style=filled]
+	koksolasolasaga -> koksolasolasagayaprak [label=True fontcolor=forestgreen]
+	koksolasolasagayaprak [label="good
+{'good': 34, 'bad': 18}" color=lightblue shape=rect style=filled]
+	koksolasolasaga -> koksolasolasagayaprak [label=" and False" color=white fontcolor=red]
+	koksolasaga [label="Özellik : Property_magnitude 
+''real estate' mi ?'"]
+	koksola -> koksolasaga [label=False fontcolor=red]
+	koksolasagayaprak [label="good
+{'good': 44, 'bad': 1}" color=lightblue shape=rect style=filled]
+	koksolasaga -> koksolasagayaprak [label=True fontcolor=forestgreen]
+	koksolasagasaga [label="Özellik : Property_magnitude 
+''no known property' mi ?'"]
+	koksolasaga -> koksolasagasaga [label=False fontcolor=red]
+	koksolasagasagayaprak [label="good
+{'bad': 4, 'good': 18}" color=lightblue shape=rect style=filled]
+	koksolasagasaga -> koksolasagasagayaprak [label=True fontcolor=forestgreen]
+	koksolasagasagasaga [label="Özellik : Employment 
+'>=7 mi ?'"]
+	koksolasagasaga -> koksolasagasagasaga [label=False fontcolor=red]
+	koksolasagasagasagayaprak [label="good
+{'good': 26, 'bad': 3}" color=lightblue shape=rect style=filled]
+	koksolasagasagasaga -> koksolasagasagasagayaprak [label=True fontcolor=forestgreen]
+	koksolasagasagasagayaprak [label="good
+{'good': 55, 'bad': 5}" color=lightblue shape=rect style=filled]
+	koksolasagasagasaga -> koksolasagasagasagayaprak [label=" and False" color=white fontcolor=red]
+	koksaga [label="Özellik : Credit_history 
+''existing paid' mi ?'"]
+	kok -> koksaga [label=False fontcolor=red]
+	koksagasola [label="Özellik : Property_magnitude 
+''real estate' mi ?'"]
+	koksaga -> koksagasola [label=True fontcolor=forestgreen]
+	koksagasolasola [label="Özellik : Age 
+' <=34 mi ?'"]
+	koksagasola -> koksagasolasola [label=True fontcolor=forestgreen]
+	koksagasolasolasola [label="Özellik : Employment 
+'<1 mi ?'"]
+	koksagasolasola -> koksagasolasolasola [label=True fontcolor=forestgreen]
+	koksagasolasolasolayaprak [label="good
+{'good': 16, 'bad': 3}" color=lightblue shape=rect style=filled]
+	koksagasolasolasola -> koksagasolasolasolayaprak [label=True fontcolor=forestgreen]
+	koksagasolasolasolasaga [label="Özellik : Employment 
+'>=7 mi ?'"]
+	koksagasolasolasola -> koksagasolasolasolasaga [label=False fontcolor=red]
+	koksagasolasolasolasagayaprak [label="good
+{'good': 4}" color=lightblue shape=rect style=filled]
+	koksagasolasolasolasaga -> koksagasolasolasolasagayaprak [label=True fontcolor=forestgreen]
+	koksagasolasolasolasagasaga [label="Özellik : Employment 
+'1<=x<4 mi ?'"]
+	koksagasolasolasolasaga -> koksagasolasolasolasagasaga [label=False fontcolor=red]
+	koksagasolasolasolasagasagayaprak [label="good
+{'bad': 8, 'good': 28}" color=lightblue shape=rect style=filled]
+	koksagasolasolasolasagasaga -> koksagasolasolasolasagasagayaprak [label=True fontcolor=forestgreen]
+	koksagasolasolasolasagasagayaprak [label="good
+{'bad': 12, 'good': 39}" color=lightblue shape=rect style=filled]
+	koksagasolasolasolasagasaga -> koksagasolasolasolasagasagayaprak [label=" and False" color=white fontcolor=red]
+	koksagasolasaga [label="Özellik : Credit_amount 
+' <=6187 mi ?'"]
+	koksagasola -> koksagasolasaga [label=False fontcolor=red]
+	koksagasolasagasola [label="Özellik : Employment 
+'>=7 mi ?'"]
+	koksagasolasaga -> koksagasolasagasola [label=True fontcolor=forestgreen]
+	koksagasolasagasolasola [label="Özellik : Property_magnitude 
+'Car mi ?'"]
+	koksagasolasagasola -> koksagasolasagasolasola [label=True fontcolor=forestgreen]
+	koksagasolasagasolasolayaprak [label="good
+{'good': 20, 'bad': 7}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasola -> koksagasolasagasolasolayaprak [label=True fontcolor=forestgreen]
+	koksagasolasagasolasolayaprak [label="good
+{'good': 43, 'bad': 10}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasola -> koksagasolasagasolasolayaprak [label=" and False" color=white fontcolor=red]
+	koksagasolasagasolasaga [label="Özellik : Employment 
+'<1 mi ?'"]
+	koksagasolasagasola -> koksagasolasagasolasaga [label=False fontcolor=red]
+	koksagasolasagasolasagayaprak [label="good
+{'bad': 22, 'good': 26}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasaga -> koksagasolasagasolasagayaprak [label=True fontcolor=forestgreen]
+	koksagasolasagasolasagasaga [label="Özellik : Employment 
+'4<=x<7 mi ?'"]
+	koksagasolasagasolasaga -> koksagasolasagasolasagasaga [label=False fontcolor=red]
+	koksagasolasagasolasagasagayaprak [label="good
+{'good': 32, 'bad': 12}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasagasaga -> koksagasolasagasolasagasagayaprak [label=True fontcolor=forestgreen]
+	koksagasolasagasolasagasagasaga [label="Özellik : Age 
+' <=34 mi ?'"]
+	koksagasolasagasolasagasaga -> koksagasolasagasolasagasagasaga [label=False fontcolor=red]
+	koksagasolasagasolasagasagasagasola [label="Özellik : Employment 
+'Unemployed mi ?'"]
+	koksagasolasagasolasagasagasaga -> koksagasolasagasolasagasagasagasola [label=True fontcolor=forestgreen]
+	koksagasolasagasolasagasagasagasolayaprak [label="bad
+{'good': 5, 'bad': 6}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasagasagasagasola -> koksagasolasagasolasagasagasagasolayaprak [label=True fontcolor=forestgreen]
+	koksagasolasagasolasagasagasagasolasaga [label="Özellik : Property_magnitude 
+''no known property' mi ?'"]
+	koksagasolasagasolasagasagasagasola -> koksagasolasagasolasagasagasagasolasaga [label=False fontcolor=red]
+	koksagasolasagasolasagasagasagasolasagayaprak [label="good
+{'good': 3, 'bad': 1}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasagasagasagasolasaga -> koksagasolasagasolasagasagasagasolasagayaprak [label=True fontcolor=forestgreen]
+	koksagasolasagasolasagasagasagasolasagasaga [label="Özellik : Property_magnitude 
+'Car mi ?'"]
+	koksagasolasagasolasagasagasagasolasaga -> koksagasolasagasolasagasagasagasolasagasaga [label=False fontcolor=red]
+	koksagasolasagasolasagasagasagasolasagasagayaprak [label="good
+{'bad': 13, 'good': 23}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasagasagasagasolasagasaga -> koksagasolasagasolasagasagasagasolasagasagayaprak [label=True fontcolor=forestgreen]
+	koksagasolasagasolasagasagasagasolasagasagayaprak [label="good
+{'bad': 19, 'good': 33}" color=lightblue shape=rect style=filled]
+	koksagasolasagasolasagasagasagasolasagasaga -> koksagasolasagasolasagasagasagasolasagasagayaprak [label=" and False" color=white fontcolor=red]
+	koksagasaga [label="Özellik : Credit_history 
+''delayed previously' mi ?'"]
+	koksaga -> koksagasaga [label=False fontcolor=red]
+	koksagasagasola [label="Özellik : Employment 
+'1<=x<4 mi ?'"]
+	koksagasaga -> koksagasagasola [label=True fontcolor=forestgreen]
+	koksagasagasolayaprak [label="good
+{'good': 22, 'bad': 3}" color=lightblue shape=rect style=filled]
+	koksagasagasola -> koksagasagasolayaprak [label=True fontcolor=forestgreen]
+	koksagasagasolayaprak [label="good
+{'good': 43, 'bad': 19}" color=lightblue shape=rect style=filled]
+	koksagasagasola -> koksagasagasolayaprak [label=" and False" color=white fontcolor=red]
+	koksagasagasaga [label="Özellik : Property_magnitude 
+'Car mi ?'"]
+	koksagasaga -> koksagasagasaga [label=False fontcolor=red]
+	koksagasagasagayaprak [label="good
+{'bad': 14, 'good': 15}" color=lightblue shape=rect style=filled]
+	koksagasagasaga -> koksagasagasagayaprak [label=True fontcolor=forestgreen]
+	koksagasagasagasagaayaprak [label="bad
+{'bad': 33, 'good': 10}" color=lightblue shape=rect style=filled]
+	koksagasagasaga -> koksagasagasagasagaayaprak [label=False fontcolor=red]
+	kok [label="Özellik : Credit_history 
+''critical/other existing credit' mi ?'"]
+	sonuclar [label="Test Sonucu: 
+Veri Sayısı : 250
+Doğru Tahmin Sayısı:174
+Yanlış Tahmin Sayısı:76
+
+Accuracy : 0.696
+True Positive Rate : 0.9147727272727273
+True Negative Rate : 0.17567567567567569
+False Positive Rate : 0.8243243243243243
+False Negative Rate : 0.08522727272727272
+True Positive Adedi:161
+True Negative Adedi: 13
+" color=gray shape=rect style=filled]
+}
